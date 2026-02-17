@@ -1,0 +1,16 @@
+const mogoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+const adminRegistrationSchema = new mogoose.Schema({
+    name:{
+        type:String,
+        required:true
+    },email:{
+        type:String,
+        required:true,
+        unique:true
+    },password:{
+        type:String,
+        required:true
+    }
+});
+module.exports = mogoose.model("AdminRegistration", adminRegistrationSchema);

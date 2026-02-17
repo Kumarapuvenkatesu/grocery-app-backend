@@ -1,0 +1,9 @@
+    "nodemon"
+    "dotenv",
+    "express"
+    "cors"
+    "mongoose"
+    "jsonwebtoken"
+    "bcryptjs"
+    "multer"
+    "nodemailer"
