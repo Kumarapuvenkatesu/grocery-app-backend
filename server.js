@@ -10,6 +10,7 @@ const ProductRoutes=require("./routes/ProductRoutes");
 const path=require('path');
 const adminRoutes=require('./routes/adminRoutes');
 const userRoutes=require('./routes/userRoutes');
+const cartRoutes=require('./routes/cartRoutes');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -24,6 +25,7 @@ app.use("/admin", adminRoutes);
 app.use("/api", ProductRoutes);
 app.use("/user", userRoutes);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use("/cart", cartRoutes);
 
 app.get('/get', (req, res) => {
   res.send('Hello World! Server is running');
