@@ -39,3 +39,37 @@ exports.getAllCartItems=async(req,res)=>{
         res.status(500).json({msg:error.message});
     }
 }
+
+// exports.removeFromCart=async(req,res)=>{
+//     try {
+//         const userId=req.userId;
+//         const {productId}=req.body;
+//         let cart=await Cart.findOne({userId});
+//         if(!cart){
+//             return res.status(404).json({msg:"Cart not found"});
+//         }
+//         cart.items=cart.items.filter(item=>item.productId.toString()!==productId);
+//         await cart.save();
+//         res.status(200).json({msg:"Product removed from cart successfully",cart});
+//     } catch (error) {
+//         res.status(500).json({msg:error.message});
+//     }
+// }
+
+// exports.eachCartItem=async(req,res)=>{
+//     try {
+//         const userId=req.userId;
+//         const {productId}=req.body;
+//         let cart=await Cart.findOne({userId});
+//         if(!cart){
+//             return res.status(404).json({msg:"Cart not found"});
+//         }
+//         const cartItem=cart.items.find(item=>item.productId.toString()===productId);
+//         if(!cartItem){
+//             return res.status(404).json({msg:"Cart item not found"});
+//         }
+//         res.status(200).json({msg:"Cart item fetched successfully",cartItem});
+//     } catch (error) {
+//         res.status(500).json({msg:error.message});
+//     }
+// }
