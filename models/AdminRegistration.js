@@ -11,6 +11,10 @@ const adminRegistrationSchema = new mogoose.Schema({
     },password:{
         type:String,
         required:true
+    },
+    role:{
+        type:String,
+        default:"admin"
     }
 });
 module.exports = mogoose.model("AdminRegistration", adminRegistrationSchema);
